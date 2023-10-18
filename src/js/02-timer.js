@@ -11,6 +11,7 @@ const secondsEl = document.querySelector('[data-seconds]');
 
 let timerId = null;
 btnEl.disable = true;
+
 const options = {
     enableTime: true, // Enables time picker 
     time_24hr: true, // Displays time picker in 24 hour mode without AM/PM selection when enabled.
@@ -19,6 +20,7 @@ const options = {
     onClose(selectedDates) {
         if (selectedDates[0] < this.config.defaultDate) {
             Notiflix.Notify.failure('Please choose a date in the future');
+            btnEl.disable = true;
         }
         else {
            btnEl.disable = false; 
