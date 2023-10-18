@@ -10,7 +10,7 @@ const minutesEl = document.querySelector('[data-minutes]');
 const secondsEl = document.querySelector('[data-seconds]');
 
 let timerId = null;
-btnEl.disable = true;
+btnEl.disabled = true;
 
 const options = {
     enableTime: true, // Enables time picker 
@@ -20,10 +20,10 @@ const options = {
     onClose(selectedDates) {
         if (selectedDates[0] < this.config.defaultDate) {
             Notiflix.Notify.failure('Please choose a date in the future');
-            btnEl.disable = true;
+            btnEl.disabled = true;
         }
         else {
-           btnEl.disable = false; 
+           btnEl.disabled = false; 
            btnEl.addEventListener('click', handlerBtn);
         }
     },
